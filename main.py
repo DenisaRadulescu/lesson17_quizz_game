@@ -1,16 +1,15 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name} sadsagda')  # Press Ctrl+F8 to toggle the breakpoint.
+# create a quizz game with admin and playes. A use has to login
+# A user has to login, if player, the he can play, if adming, can add questions
+import json
+import users
 
 
-# Press the green button in the gutter to run the script.
+
+
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    welcome_msg = "Welcome to Quiz Game!!"
+    print(f"{len(welcome_msg) * '='}{welcome_msg}{len(welcome_msg) * '='}")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    users.login()
