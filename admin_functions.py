@@ -1,4 +1,5 @@
 import json
+from quizz_logger import logger
 
 import game
 
@@ -26,6 +27,7 @@ def add_questions(all_questions: list, questions_path: str = "questions.json"):
 
     except Exception as e:
         print(f"Error on adding new question {e}")
+        logger.error(f"Error on adding new question {e}")
 
 
 def delete_questions(all_questions: list, questions_path: str = "questions.json"):
@@ -41,8 +43,10 @@ def delete_questions(all_questions: list, questions_path: str = "questions.json"
             f.write(json.dumps({"questions": all_questions}, indent=4))
     except IndexError as e:
         print(f"Question not found. Error on deleting: {e}")
+        logger.error(f"Question not found. Error on deleting: {e}")
     except Exception as e:
         print(f"Unknown Error on deleting: {e}")
+        logger.error(f"Unknown Error on deleting: {e}")
     else:
         print("Successfully deleted question.")
 
